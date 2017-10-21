@@ -24,7 +24,7 @@ class Bounce{
         timer.id = "timer";
         timer.appendChild(document.createTextNode("00:30"));
         scoreboard.id = "score-board";
-        let points = document.createTextNode("Score - 0");
+        let points = document.createTextNode("Score: 0");
         scoreboard.appendChild(points);
         let field = this.root;
         field.appendChild(scoreboard);
@@ -53,11 +53,11 @@ class Bounce{
         let ballLeft = ball.offsetLeft;
           
           if(ballTop >= window.innerHeight-100 && ballTop <=window.innerHeight) this.y=1;
-          if(ballTop == 0) 
+          if(ballTop >= 0 && ballTop <=5) 
               this.y=0;
           if(ballLeft >= window.innerWidth-100 && ballLeft<= window.innerWidth)
               this.x=1;
-          if(ballLeft == 0)
+          if(ballLeft >= 0 && ballLeft <=5)
               this.x=0;
         
           if(this.y ==1){
@@ -74,10 +74,6 @@ class Bounce{
             else if(this.x==1)
                  ball.style.left = (ballLeft-move) + "px";
            }
-          /*if(ballLeft > window.innerWidth-100){
-              ball.style.left =0+"px";
-              ball.style.top = ballTop +"px";
-          }*/
           if( (stickTop >= ballTop-20 && stickTop<=ballTop) && (ballLeft>=stickLeft && ballLeft<=stickLeft+250)){
                 this.score+=5;
                 this.scoreUpdate(this.score);
@@ -87,7 +83,7 @@ class Bounce{
    }
     scoreUpdate(score){
        let points = document.getElementById('score-board');
-        points.innerHTML = `Score - ${score}`;
+        points.innerHTML = `Score: ${score}`;
         
     }
     gameTimer(){
@@ -109,7 +105,7 @@ class Bounce{
         let root = this.root;
         document.getElementById('ball').style.display = 'none';
         document.getElementById('stick').style.display = 'none';
-        h1.append(document.createTextNode(`Your Score - ${this.score}`));
+        h1.append(document.createTextNode(`Your Score : ${this.score}`));
         div.append(h1);
         root.append(div);
     }
@@ -120,6 +116,7 @@ window.onmousemove = (e)=>{
     var x = e.pageX - 125;
      document.getElementById('stick').style.left = x+"px";
 }
+
 
 let bounce = new Bounce();
 bounce.moveBall();

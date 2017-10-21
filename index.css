@@ -3,13 +3,11 @@ html, body{
     padding: 0;
     overflow: hidden;
     font-family: sans-serif;
-    //border-top: 1px solid black;
 }
 #area{
     background: #f1f1f1;
     width: 100vw;
     height: 100vh;
-    //border-top: 3px solid black;
 }
 #ball{
     position: relative;
