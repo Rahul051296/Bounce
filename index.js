@@ -17,6 +17,10 @@ class Bounce{
         let field = document.createElement('div');
         field.id = 'area';
         document.body.appendChild(field);
+        let title = document.createElement('p');
+        title.id = 'title';
+        title.appendChild(document.createTextNode("Bounce"));
+        field.append(title)
     }
     scoreboard(){
         let scoreboard = document.createElement('h1');
@@ -81,7 +85,7 @@ class Bounce{
                 this.score+=5;
                 this.scoreUpdate(this.score);
             } 
-       },5);
+       },10);
     
    }
     scoreUpdate(score){
@@ -107,6 +111,7 @@ class Bounce{
         let root = this.root;
         document.getElementById('ball').style.display = 'none';
         document.getElementById('stick').style.display = 'none';
+        //document.getElementById('title').style.display = 'none';
         h1.append(document.createTextNode(`Your Score : ${this.score}`));
         div.append(h1);
         root.append(div);
