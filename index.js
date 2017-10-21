@@ -6,9 +6,8 @@ class Bounce{
         this.stick();
         this.interval;
         this.scoreboard();
-        this.count = 0;
         this.score = 0;
-        this.time = 50;
+        this.time = 30;
         this.y = 0;
         this.x = 0;
         this.timer;
@@ -26,7 +25,7 @@ class Bounce{
         let scoreboard = document.createElement('h1');
         let timer = document.createElement('h2');
         timer.id = "timer";
-        timer.appendChild(document.createTextNode("Time Left: 00:50"));
+        timer.appendChild(document.createTextNode("Time Left: 00:30"));
         scoreboard.id = "score-board";
         let points = document.createTextNode("Score: 0");
         scoreboard.appendChild(points);
@@ -85,7 +84,7 @@ class Bounce{
                 this.score+=5;
                 this.scoreUpdate(this.score);
             } 
-       },10);
+       },5);
     
    }
     scoreUpdate(score){
@@ -111,7 +110,6 @@ class Bounce{
         let root = this.root;
         document.getElementById('ball').style.display = 'none';
         document.getElementById('stick').style.display = 'none';
-        //document.getElementById('title').style.display = 'none';
         h1.append(document.createTextNode(`Your Score : ${this.score}`));
         div.append(h1);
         root.append(div);
@@ -120,10 +118,9 @@ class Bounce{
 }
 
 window.onmousemove = (e)=>{
-    var x = e.pageX - 125;
+    let x = e.pageX - 125;
      document.getElementById('stick').style.left = x+"px";
 }
-
 
 let bounce = new Bounce();
 bounce.moveBall();
