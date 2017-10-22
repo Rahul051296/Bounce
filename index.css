@@ -1,18 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Kanit');
 @import url('https://fonts.googleapis.com/css?family=Passion+One');
-html, body{
+html,
+body {
     margin: 0;
     padding: 0;
     overflow: hidden;
     font-family: 'Kanit', sans-serif;
     color: #fff;
 }
-#area{
-    background: radial-gradient(#206188,#071d25);
+
+#area,
+#splash {
+    background: radial-gradient(#206188, #071d25);
     width: 100vw;
     height: 100vh;
 }
-#ball{
+
+#ball {
     position: relative;
     background: #98ff01;
     box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
@@ -21,7 +25,8 @@ html, body{
     z-index: 10;
     border-radius: 100%;
 }
-.sticks{
+
+.sticks {
     background: #fafafa;
     box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, .75);
     width: 250px;
@@ -30,35 +35,67 @@ html, body{
 }
 
 #stick {
-	position: absolute;
-    bottom:0;
+    position: absolute;
+    bottom: 0;
 }
-#score-board{
+
+#score-board {
     position: absolute;
     right: 10px;
     font-size: 2em;
-    top:0;
+    top: 0;
 }
-#timer{
+
+#timer {
     position: absolute;
     right: 10px;
-    top:50px;
+    top: 50px;
 }
-#result{
+
+#result {
     position: absolute;
     right: 50%;
     margin-right: -110px;
     margin-top: -37px;
-    top:50%;
+    top: 50%;
 }
-#title{
+
+#title,
+#app-name {
     position: absolute;
     font-size: 8em;
     left: 50%;
-    top:30%;
+    top: 30%;
     color: rgba(255, 255, 255, 0.5);
     font-style: normal;
-    font-family: 'Passion One', cursive;;
+    font-family: 'Passion One', cursive;
     margin-left: -170px;
     margin-top: -50px;
+}
+
+#app-name {
+    color: rgba(255, 255, 255, 1);
+}
+
+#alert {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    margin-left: -160px;
+    font-size: 2em;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: transparent;
+    border: 0;
+    font-family: 'Kanit', sans-serif;
+    margin-left: -45px;
+    box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, .75);
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+    font-size: 2em;
 }
