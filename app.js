@@ -13,8 +13,8 @@ class App {
         let button = document.createElement('button');
         button.setAttribute('onclick', 'app.start()');
         button.appendChild(document.createTextNode("Start"))
-        field.append(button);
-        field.append(title);
+        field.appendChild(button);
+        field.appendChild(title);
     }
     start() {
         let alert = document.createElement('div');

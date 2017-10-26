@@ -112,8 +112,8 @@ class Bounce {
         document.getElementById('ball').style.display = 'none';
         document.getElementById('stick').style.display = 'none';
         document.getElementById('area').style.cursor = 'auto';
-        h1.append(document.createTextNode(`Your Score : ${this.score}`));
-        div.append(h1);
-        root.append(div);
+        h1.appendChild(document.createTextNode(`Your Score : ${this.score}`));
+        div.appendChild(h1);
+        root.appendChild(div);
     }
 }
