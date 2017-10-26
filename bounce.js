@@ -47,12 +47,15 @@ class Bounce {
         field.appendChild(stick);
     }
     moveBall() {
+        let ball = document.getElementById('ball');
+        let stick = document.getElementById('stick');
+
         this.interval = setInterval(() => {
-            let ball = document.getElementById('ball');
-            let stick = document.getElementById('stick');
+
             let stickTop = stick.offsetTop - 100;
             let stickLeft = stick.offsetLeft;
-            let move = 15;
+
+            let move = 8;
             let ballTop = ball.offsetTop;
             let ballLeft = ball.offsetLeft;
 
@@ -66,25 +69,24 @@ class Bounce {
                 this.x = 0; //right
 
             if (this.y == 0) {
-                ball.style.top = (ballTop + move) + "px";
+                ball.style.top = `${ballTop + move}px`;
                 if (this.x == 0)
-                    ball.style.left = (ballLeft + move) + "px";
+                    ball.style.left = `${ballLeft + move}px`;
                 else if (this.x == 1)
-                    ball.style.left = (ballLeft - move) + "px";
+                    ball.style.left = `${ballLeft - move}px`;
             } else if (this.y == 1) {
-                ball.style.top = (ballTop - move) + "px";
+                ball.style.top = `${ballTop - move}px`;
                 if (this.x == 0)
-                    ball.style.left = (ballLeft + move) + "px";
+                    ball.style.left = `${ballLeft + move}px`;
                 else if (this.x == 1)
-                    ball.style.left = (ballLeft - move) + "px";
+                    ball.style.left = `${ballLeft - move}px`;
             }
 
             if ((stickTop >= ballTop - 20 && stickTop <= ballTop) && (ballLeft >= stickLeft && ballLeft <= stickLeft + 250)) {
                 this.score += 5;
                 this.scoreUpdate(this.score);
             }
-        }, 10);
-
+        }, 5);
     }
     scoreUpdate(score) {
         let points = document.getElementById('score-board');
@@ -109,6 +111,7 @@ class Bounce {
         let root = this.root;
         document.getElementById('ball').style.display = 'none';
         document.getElementById('stick').style.display = 'none';
+        document.getElementById('area').style.cursor = 'auto';
         h1.append(document.createTextNode(`Your Score : ${this.score}`));
         div.append(h1);
         root.append(div);

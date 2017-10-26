@@ -15,6 +15,9 @@ body {
     width: 100vw;
     height: 100vh;
 }
+#area {
+	cursor: none;
+}
 
 #ball {
     position: relative;
@@ -98,4 +101,15 @@ button {
     border-radius: 50%;
     color: white;
     font-size: 2em;
+}
+button:focus{
+    outline:none;
+    background: #206188;
+    top:50.2%;
+    left: 50.1%;
+}
+button:hover{
+    background: #206188;
+    top:50.2%;
+    left: 50.1%;
 }
