@@ -19,7 +19,7 @@ class Bounce {
         let title = document.createElement('p');
         title.id = 'title';
         title.appendChild(document.createTextNode("Bounce"));
-        field.append(title)
+        field.appendChild(title)
     }
     scoreboard() {
         let scoreboard = document.createElement('h1');
